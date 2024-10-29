@@ -1,0 +1,84 @@
+<body>
+    <div class="container">
+        <h2>Lector</h2>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>NOMBRES</th>
+                        <th>TELEFONO</th>
+                        <th>DIRECCION</th>
+                        <th>CODIGO POSTAL</th>
+                        <th>OBSERVACIONES</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <ng-container *ngFor="let lector of lector; let i = index">
+                        <tr (click)="seleccionarLector(lector)">
+                            <td>{{ i + 1 }}</td>
+                            <td>{{ lector.nombre }}</td>
+                            <td>{{ lector.telefono }}</td>
+                            <td>{{ lector.direccion }}</td>
+                            <td>{{ lector.codigopos }}</td>
+                            <td>{{ lector.observ }}</td>
+                            <td>
+                                <button class="btn btn-danger btn-sm"
+                                    (click)="eliminarLector(lector.id)">Eliminar</button>
+                            </td>
+                        </tr>
+                    </ng-container>
+                </tbody>
+            </table>
+        </div>
+    </div> 
+    <!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card-custom">
+                    <div class="card-body">
+                        <h2>Crear Nuevo Lector</h2>
+                        <label for="nuevorNombre">Nombre del Lector:</label>
+                        <input [(ngModel)]="nuevoLector.nombre" id="nuevorNombre" class="form-control" />
+                        <label for="nuevoApellidosAutor">Telefono  del Lector:</label>
+                        <input [(ngModel)]="nuevoLector.telefono" id="nuevoApellidosAutor" class="form-control" />
+                        <label for="nuevoFechaNacimiento">Direcion Lector:</label>
+                        <input [(ngModel)]="nuevoLector.direccion" id="nuevoFechaNacimiento" class="form-control" />
+                        <label for="nuevoLugarNacimiento">Codigo postal Lector:</label>
+                        <input [(ngModel)]="nuevoLector.codigopos" id="nuevoLugarNacimiento" class="form-control" />
+                        <label for="nuevoGenero">Obsevaciones de  Lector:</label>
+                        <input [(ngModel)]="nuevoLector.observ" id="nuevoGenero" class="form-control" />
+                        <button class="btn btn-success" (click)="crearLector()">Crear</button>
+                    </div>
+                </div>
+                <!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+          </div>
+            <div class="col-md-6">
+                <div class="card card-custom">
+                    <div class="card-body">
+                        <h2>Editar Lector</h2>
+                        <div *ngIf="lectorSeleccionado">
+                            <label for="nombreautor">Nombre del Lector:</label>
+                            <input [(ngModel)]="lectorSeleccionado.nombre" id="nombreautor" class="form-control" />
+                            <label for="apellidosautor">Telefono  del Lector:</label>
+                            <input [(ngModel)]="lectorSeleccionado.telefono" id="apellidosautor"
+                                class="form-control" />
+                            <label for="fecha_nacimiento">Direcion Lector:</label>
+                            <input [(ngModel)]="lectorSeleccionado.direccion" id="fecha_nacimiento"
+                                class="form-control" />
+                            <label for="lugar_nacimiento">Codigo postal Lector:</label>
+                            <input [(ngModel)]="lectorSeleccionado.codigopos" id="lugar_nacimiento"
+                                class="form-control" />
+                            <label for="genero">Obsevaciones de  Lector:</label>
+                            <input [(ngModel)]="lectorSeleccionado.observ" id="genero" class="form-control" />
+                            <button class="btn btn-primary" (click)="actualizarLector()">Actualizar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+

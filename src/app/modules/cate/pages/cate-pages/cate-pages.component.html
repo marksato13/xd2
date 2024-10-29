@@ -1,0 +1,61 @@
+<body>
+  <div class="container">
+    <h2>Autores</h2>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>NOMBRE DE LA CATEGORIA</th>
+            <th>DESCRIPCION</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let categoria of categoria; let i = index">
+            <tr (click)="seleccionarCategoria(categoria)">
+              <td>{{ i + 1 }}</td>
+              <td>{{ categoria.nombrecategoria }}</td>
+              <td>{{ categoria.descripcion }}</td>
+              <td>
+                <!-- <button (click)="actualizarCategoria()">Actualizar</button> -->
+                <button class="btn btn-danger btn-sm" (click)="eliminarCategoria(categoria.id)">Eliminar</button>
+              </td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>
+</div>
+</div>
+<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card card-custom">
+            <div class="card-body">
+              <h2>Crear Nuevo Categoria</h2>
+              <label for="nombrecategoria">Nombre de la Categoria:</label>
+              <input [(ngModel)]="nuevoCategoria.nombrecategoria" id="nombrecategoria" class="form-control" />
+              <label for="descripcion">Descripcion:</label>
+              <input [(ngModel)]="nuevoCategoria.descripcion" id="descripcion" class="form-control" />
+              <button class="btn btn-success" (click)="crearCategoria()"> Crear</button>
+            </div>
+          </div>
+<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+        </div>
+        <div class="col-md-6">
+          <div class="card card-custom">
+            <div class="card-body">
+              <h2>Editar CATEGOTIA</h2>
+              <div *ngIf="categoriaSeleccionado">
+                <label for="nombrecategoria">Nombre de la Categoria:</label>
+                <input [(ngModel)]="categoriaSeleccionado.nombrecategoria" id="nombrecategoria" class="form-control" />
+                <label for="descripcion">Descripcion:</label>
+                <input [(ngModel)]="categoriaSeleccionado.descripcion" id="descripcion" class="form-control" />
+                <button class="btn btn-primary" (click)="actualizarCategoria()">Actualizar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

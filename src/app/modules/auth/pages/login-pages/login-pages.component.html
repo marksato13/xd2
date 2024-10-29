@@ -1,0 +1,46 @@
+<div class="login">
+  <main class="main">
+    <form class="form" [formGroup]="formInputs" (ngSubmit)="login()" >
+      <div class="box-title">
+        <h1 class="form__title">Iniciar Sesión</h1>
+      </div>
+      <div class="inputWithIcon inputIconBg">
+        <input
+          type="text"
+          placeholder="User Name"
+          class="input"
+          name="usuario"
+          formControlName="usuario"
+          pInputText
+        />
+        <i class="fa fa-user fa-lg fa-fw icon" aria-hidden="true"></i>
+      </div>
+      <div class="inputWithIcon inputIconBg">
+        <input
+          type="password"
+          placeholder="Password"
+          class="input"
+          name="password"
+          formControlName="password"
+          pPassword
+        />
+        <i class="fa fa-lock fa-lg fa-fw icon" aria-hidden="true"></i>
+      </div>
+      <div class="text-invalid" *ngIf="verifyDataSession">
+        <p>Usuario y contraseña no validas...!!!</p>
+      </div>
+      <div class="box-footer">
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="formInputs.invalid"
+          pButton
+        >
+          Ingresar
+        </button>
+      </div>
+      <div class="box-footer">
+      </div>
+    </form>
+  </main>
+</div>

@@ -1,0 +1,94 @@
+
+/* Estilos para las cartas */
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+/* Estilos para columnas en dispositivos pequeños */
+@media (max-width: 768px) {
+    .col-md-6 {
+        width: 100%;
+    }
+}
+
+
+/* CSS personalizado */
+.card-custom {
+    background-color: #ffffff; /* Color de fondo personalizado */
+    color: #000000; /* Color del texto */
+    border: 12px solid #053362; /* Borde personalizado */
+  }
+  
+  .card-custom:hover {
+    background-color: rgba(255, 255, 255, 0.809); /* Cambio de color al pasar el ratón sobre la tarjeta */
+  }
+    /* Style the table border with a custom color */
+    table {
+        border: 2px solid #053362;
+      }
+    
+      /* Style the table headers with a background color and text color */
+      table th {
+        background-color: #053362;
+        color: white;
+      }
+    
+      /* Style the table rows with alternating background colors */
+      table tr:nth-child(odd) {
+        background-color: #f2f2f2;
+      }
+    
+      /* Style the table rows when hovered over */
+      table tr:hover {
+        background-color: #cce5ff;
+      }
+
+      /* Add this CSS in your styles.css or in your component's styles */
+
+.table td {
+  vertical-align: middle; /* Align content vertically in the middle of the cell */
+}
+
+.index-col {
+  width: 50px; /* Adjust width as needed */
+}
+
+.info-col {
+  max-width: 300px; /* Adjust max-width as needed */
+}
+
+.button-col {
+  width: 100px; /* Adjust width as needed */
+}
+
+
+/* Add this style in your styles.css or in your component's styles */
+.table td {
+  max-width: 150px; /* Adjust max-width as needed */
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Show ellipsis (...) for overflowed content */
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.mb-4 {
+  margin-bottom: 0.5rem !important; /* Adjust margin-bottom as needed */
+}
+
+.table-bordered td,
+.table-bordered th {
+  border: 1px solid #dee2e6 !important; /* Adjust border styling as needed */
+}

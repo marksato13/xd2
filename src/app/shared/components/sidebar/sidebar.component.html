@@ -1,0 +1,46 @@
+<!-- sidebar.component.html -->
+<aside class="aside" [ngClass]="!sidebarStatusLarge ? 'aside':'aside aside--large'">
+  <div>
+    <div class="sidebar-top">
+
+      <div class="sidebar-textMain">
+        <a [routerLink]="'/home/inicio'" class="sidebar-top__text">
+          <i class="fa-solid fa-house" id="icon"></i>
+        </a>
+      </div>
+    </div>
+    <!-- ** Sidebar MENU -->
+
+    <nav class="menu-container">
+      <ul class="nav">
+        <li *ngFor="let menu of menus" class="nav__item">
+          <a href="#" [routerLink]="menu.link" (click)="toggleSubMenu(menu)">
+            <i class="{{ menu.icon }}" aria-hidden="true"></i>
+            <span class="text nav__link" style="font-size: 16px;">{{ menu.name }}</span>
+            <i class="fas fa-chevron-down" *ngIf="menu.submenu && menu.open"></i>
+          </a>
+    
+        </li>
+      </ul>
+    </nav>
+
+    <button (click)="redirectToAuth()" class="auth-button auth-button-redirect">
+      <i class="fas fa-sign-out-alt auth-icon"></i> 
+    </button>
+
+
+    
+  </div>
+</aside>
+
+
+
+      <!-- Submenú -->
+          <!-- <ul class="subnav" *ngIf="menu.submenu && menu.open">
+            <li *ngFor="let submenuItem of menu.submenu">
+              <a [routerLink]="submenuItem.link">
+                <i class="{{ submenuItem.icon }}" aria-hidden="true"></i>
+                <span class="text subnav__link">{{ submenuItem.name }}</span>
+              </a>
+            </li>
+          </ul> -->

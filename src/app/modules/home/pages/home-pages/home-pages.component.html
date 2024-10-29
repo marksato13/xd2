@@ -1,0 +1,7 @@
+<app-menu-header (buttonSidebarAction)="getData($event)"> </app-menu-header>
+
+<app-sidebar [sidebarStatusLarge]="sidebarStatusLarge"></app-sidebar>
+
+<div [ngClass]="!sidebarStatusLarge ? 'menu' : 'menu menu--large'">
+    <router-outlet> </router-outlet>
+</div>

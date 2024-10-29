@@ -1,0 +1,40 @@
+<div class="container">
+  <h2>Agregar Escuela</h2>
+  <div class="card form-card">
+    <div class="card-body">
+      <form (submit)="agregarEscuela()">
+        <div class="form-group">
+          <label for="nombreea">Nombre de la Escuela:</label>
+          <input type="text" id="nombreea" [(ngModel)]="nuevoEscuela.nombreea" name="nombreea" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+          <label for="facultad">Facultad:</label>
+          <select id="facultad" [(ngModel)]="nuevoEscuela.facultad" name="facultad" class="form-control" required>
+            <option value="0" disabled>Selecciona una facultad</option>
+            <option *ngFor="let facultad of facultades" [value]="facultad.id">{{ facultad.nombre_facultad }}</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Agregar Escuela</button>
+        <button type="button" class="btn btn-primary" (click)="editarEscuela()" *ngIf="idEscuelaEditar">Editar Escuela</button>
+      </form>
+    </div>
+  </div>
+
+  <h2>Lista de Escuelas</h2>
+  <div class="row">
+    <div *ngFor="let escuela of escuelas" class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ escuela.nombreea }}</h5>
+          <p class="card-text">
+            <strong>Facultad:</strong> {{ escuela.facultad.nombre_facultad }}<br>
+          </p>
+          <button class="btn btn-danger" (click)="eliminarEscuela(escuela.id)">Eliminar</button>
+          <button class="btn btn-primary" (click)="cargarDatosEscuelaParaEdicion(escuela.id)">Editar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

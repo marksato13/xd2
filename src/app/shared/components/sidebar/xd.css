@@ -1,0 +1,120 @@
+.aside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  
+  padding: 0;
+  background-color: #145285;
+  z-index: 100;
+  box-shadow: 0 0 5px black;
+  overflow-y: auto; /* Agrega desplazamiento vertical cuando el contenido es demasiado largo */
+  transition: width 0.2s ease-in;
+}
+
+.aside.aside--large {
+  width: 80px; /* Ancho reducido para el modo "large" */
+}
+
+.sidebar-top {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+}
+
+.sidebar-top__text {
+  text-transform: uppercase;
+  margin-left: 10px; /* Espacio entre el icono y el texto */
+  font-weight: bold;
+  font-size: 14px; /* Tamaño de fuente ajustado */
+  color: #ffffff;
+}
+
+.menu-container {
+  padding: 15px 0;
+  border-top: 1px solid #1c78cd;
+}
+
+.nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__item {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative; /* Para el submenú */
+}
+
+.nav__item a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 14px; /* Tamaño de fuente ajustado */
+  display: flex;
+  align-items: center; /* Alinea el texto verticalmente */
+  padding: 10px 20px; /* Espaciado ajustado */
+  transition: background-color 0.3s ease;
+}
+
+.nav__item:hover,
+.nav__item--botom:hover {
+  background-color: #59b9df;
+  border-radius: 5px;
+}
+
+.nav__item--botom {
+  list-style: none;
+  margin: 3px;
+  padding: 10px 20px; /* Espaciado ajustado */
+  height: 46px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 250px; /* Ancho ajustado */
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+#icon {
+  margin-right: 10px; /* Espacio entre el ícono y el texto */
+  font-size: 18px; /* Tamaño de fuente ajustado */
+}
+
+/* Estilos para el submenú */
+.subnav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.subnav li {
+  padding: 8px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.subnav li:last-child {
+  border-bottom: none;
+}
+
+.subnav a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  padding: 5px 0; /* Espaciado ajustado */
+}
+
+.subnav a:hover {
+  background-color: #f5f5f5;
+}
+
+.subnav i {
+  margin-right: 10px;
+}
+
+.subnav__link {
+  font-size: 14px;
+}
